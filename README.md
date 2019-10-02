@@ -79,6 +79,9 @@ show tables;
 These might be useful for ubuntu users YMMV
 https://support.rackspace.com/how-to/installing-mysql-server-on-ubuntu/
 https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04
+mysql cheat sheets
+https://en.wikibooks.org/wiki/MySQL/CheatSheet
+
 
 
 useful checks for port, mysql default port is 3306
@@ -96,16 +99,36 @@ https://dev.mysql.com/doc/mysql-security-excerpt/5.7/en/changing-mysql-user.html
 Setup project directory structure and files
 ```
 mkdir app
+mkdir instance
 touch app/__init__.py
-touch app/templates
+mkdir app/templates
 touch app/models.py
 touch app/views.py
-touch app/config.py
-touch app/requirements.txt
-touch app/run.py
+touch config.py
+touch requirements.txt
+touch run.py
+touch instance/config.py
 ```
+we now have
+
+├── app/
+│   ├── __init__.py
+│   ├── templates
+│   ├── models.py
+│   └── views.py
+├── instance/
+│   └── config.py
+├── config.py
+├── requirements.txt
+└── run.py
 
 ```
+export FLASK_CONFIG=development
+export FLASK_APP=run.py
+#now show value of these environment variables
+echo $FLASK_APP
+echo $FLASK_CONFIG
+flask run
 ```
 
 ## Usage
